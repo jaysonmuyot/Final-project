@@ -80,7 +80,6 @@ def doc_to_json(doc):
   d = {}
   key = ndb.Key(urlsafe=doc.doc_id)
   d["Id"] = key.id()
-  d["Key"] = key.urlsafe()
   for f in doc.fields:
     if f.name[0].isupper():
       d[f.name] = f.value
@@ -101,8 +100,6 @@ class SearchHandler(BaseHandler):
     if returned_fields:
       try:
         returned_fields = json.loads(returned_fields)
-        logging.info('returned_fields')
-        logging.info(returned_fields)
       except ValueError:
         returned_fields = None
     snippeted_fields = self.request.get("snippeted_fields", None)
@@ -118,9 +115,9 @@ class SearchHandler(BaseHandler):
                 returned_fields=returned_fields,
                 snippeted_fields=snippeted_fields)
     query = search.Query(query_string=q, options=options)
+
     index_name = index_name or _INDEX_NAME
     index = search.Index(name=index_name)
-    logging.info(index_name)
     try:
       results = index.search(query)
     except search.Error as e:

@@ -5,3 +5,26 @@ body {
 .hidden {
     display: none;
 }
+
+.header {
+	background-color: #92E3FF;
+}
+
+h1, h3 {
+	text-align: center;
+}
+
+h3, span {
+	font-style: italic;
+}
+
+#web-title {
+	font-weight: bolder;
+	color: black;
+	font-size: 200%;
+	font-style: italic;
+}
+
+#header-content {
+	color: white;
+}
