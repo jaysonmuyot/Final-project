@@ -8,6 +8,7 @@ body {
 
 .header {
 	background-color: #92E3FF;
+	margin-bottom: 100px;
 }
 
 h1, h3 {
@@ -21,10 +22,14 @@ h3, span {
 #web-title {
 	font-weight: bolder;
 	color: black;
-	font-size: 200%;
-	font-style: italic;
+	font-size: 250%;
+	font-family: fantasy;
 }
 
 #header-content {
 	color: white;
+}
+.logo{
+	width: 200px;
+	height: 200px;
 }
